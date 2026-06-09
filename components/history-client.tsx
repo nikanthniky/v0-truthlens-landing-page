@@ -73,8 +73,12 @@ export function HistoryClient() {
             Your analyzed images will appear here.
           </p>
         </div>
-        <Button asChild className="bg-gradient-brand text-primary-foreground glow-brand">
-          <Link href="/analyze">Analyze your first image</Link>
+        <Button
+          render={<Link href="/analyze" />}
+          nativeButton={false}
+          className="bg-gradient-brand text-primary-foreground glow-brand"
+        >
+          Analyze your first image
         </Button>
       </Card>
     )

@@ -42,8 +42,12 @@ export function SiteHeader() {
           })}
         </nav>
 
-        <Button asChild className="bg-gradient-brand text-primary-foreground glow-brand">
-          <Link href="/analyze">Analyze Image</Link>
+        <Button
+          render={<Link href="/analyze" />}
+          nativeButton={false}
+          className="bg-gradient-brand text-primary-foreground glow-brand"
+        >
+          Analyze Image
         </Button>
       </div>
     </header>

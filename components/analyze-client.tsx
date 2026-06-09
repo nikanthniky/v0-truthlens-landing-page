@@ -62,19 +62,18 @@ export function AnalyzeClient() {
     setProgress(0)
     setScanStep(0)
 
+    let value = 0
     const interval = setInterval(() => {
-      setProgress((p) => {
-        const next = Math.min(100, p + 2)
-        setScanStep(Math.min(SCAN_STEPS.length - 1, Math.floor(next / 25)))
-        if (next >= 100) {
-          clearInterval(interval)
-          const res = analyzeImage(preview.url, preview.name)
-          setResult(res)
-          addResult(res)
-          setTimeout(() => setStage("result"), 250)
-        }
-        return next
-      })
+      value = Math.min(100, value + 2)
+      setProgress(value)
+      setScanStep(Math.min(SCAN_STEPS.length - 1, Math.floor(value / 25)))
+      if (value >= 100) {
+        clearInterval(interval)
+        const res = analyzeImage(preview.url, preview.name)
+        setResult(res)
+        addResult(res)
+        setTimeout(() => setStage("result"), 250)
+      }
     }, 45)
   }, [preview, addResult])
 

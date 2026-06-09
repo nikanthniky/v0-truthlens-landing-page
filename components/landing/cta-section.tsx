@@ -19,14 +19,13 @@ export function CtaSection() {
         </p>
         <div className="relative mt-8 flex justify-center">
           <Button
-            asChild
+            render={<Link href="/analyze" />}
+            nativeButton={false}
             size="lg"
             className="bg-gradient-brand text-primary-foreground glow-brand"
           >
-            <Link href="/analyze">
-              Analyze Image
-              <ArrowRight className="size-4" />
-            </Link>
+            Analyze Image
+            <ArrowRight className="size-4" />
           </Button>
         </div>
       </div>

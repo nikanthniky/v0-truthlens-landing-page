@@ -35,17 +35,22 @@ export function Hero() {
 
           <div className="flex flex-wrap items-center gap-3">
             <Button
-              asChild
+              render={<Link href="/analyze" />}
+              nativeButton={false}
               size="lg"
               className="bg-gradient-brand text-primary-foreground glow-brand"
             >
-              <Link href="/analyze">
-                Analyze Image
-                <ArrowRight className="size-4" />
-              </Link>
+              Analyze Image
+              <ArrowRight className="size-4" />
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-border">
-              <Link href="#how-it-works">Learn More</Link>
+            <Button
+              render={<Link href="#how-it-works" />}
+              nativeButton={false}
+              size="lg"
+              variant="outline"
+              className="border-border"
+            >
+              Learn More
             </Button>
           </div>
 
