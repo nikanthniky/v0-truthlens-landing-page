@@ -1,20 +1,11 @@
-export type Verdict = "real" | "ai"
+export interface AnalysisResult {
+  fileName?: string;
+  imageUrl?: string;
 
-export type DetectionIndicator = {
-  label: string
-  /** 0 - 100, higher = more authentic / camera-like */
-  score: number
-  description: string
-}
-
-export type AnalysisResult = {
-  id: string
-  imageUrl: string
-  fileName: string
-  verdict: Verdict
-  /** 0 - 100 confidence in the verdict */
-  confidence: number
-  createdAt: number
-  indicators: DetectionIndicator[]
-  reasons: { title: string; description: string }[]
+  verdict: string;
+  confidence: number;
+  confidence_level: string;
+  metadata: any;
+  reasons: any[];
+  indicators: any[];
 }
