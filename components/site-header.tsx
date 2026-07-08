@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useAuth } from "@/lib/auth-context";
 import { LogoutButton } from "@/components/dialog/logout-dialog";
+import { ProfileDropdown } from "./profile/profile-dropdown";
 
 const links = [
   { href: "/", label: "Home" },
@@ -47,7 +48,7 @@ export function SiteHeader() {
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   active
                     ? "bg-secondary text-foreground"
-                    : "text-muted-foreground hover:text-foreground"
+                    : "text-muted-foreground hover:text-foreground",
                 )}
               >
                 {link.label}
@@ -68,23 +69,8 @@ export function SiteHeader() {
 
           {user ? (
             <>
-              {/* User Avatar */}
-              <div className="flex items-center gap-2 rounded-full border border-border px-3 py-2">
-                <div className="flex h-8 w-8 items-center justify-center rounded-full bg-primary/10">
-                  <User className="size-4 text-primary" />
-                </div>
-
-                <div className="hidden sm:block">
-                  <p className="text-sm font-medium">
-                    {user.name}
-                  </p>
-                  <p className="text-xs text-muted-foreground">
-                    {user.email}
-                  </p>
-                </div>
-              </div>
-
-            <LogoutButton />
+             
+              <ProfileDropdown />
             </>
           ) : (
             <>
